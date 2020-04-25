@@ -1,0 +1,21 @@
+body {
+    background-color: hsla(276, 37%, 23%, 0.635);
+}
+
+.oculto {
+    display: none;
+}
+
+input[type=number]:enabled {
+    background: rgba(118, 243, 93, 0.815);
+}
+
+input[type=number]:disabled {
+    background: hsla(193, 7%, 76%, 0.863);
+}
+
+.anios,
+.num,
+#numero {
+    text-align: center;
+}
