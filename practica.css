@@ -14,7 +14,7 @@ input[type=number]:disabled {
     background: hsla(193, 7%, 76%, 0.863);
 }
 
-.anios,
+.anio,
 .num,
 #numero {
     text-align: center;
