@@ -1,29 +1,32 @@
 document.querySelector('#listo').onclick = function(evento) {
+    evento.preventDefault();
     const $numero = document.querySelector('#numero');
     const numero = Number($numero.value);
     //const numero = $numero.value; Esto es lo mismo que lo de arriba? No veo que cambie nada.
     borrarIntegrantes();
     controlFamilia(numero);
-    event.preventDefault();
+   
 }
 
 document.querySelector('#calcularedad').onclick = function(evento) {
+    evento.preventDefault();
     const edad = obtenerEdad();
     mostrarEdad('mayor', obtenerMayorNumero(edad));
     mostrarEdad('menor', obtenerMenorNumero(edad));
     mostrarEdad('promedio', obtenerPromedio(edad));
     mostrarResultados();
-    event.preventDefault();
+  
 }
 
 document.querySelector('#calcularsalario').onclick = function(evento) {
+    evento.preventDefault();
     const salario = ObtenerSalario();
     mostrarSalario('mayor', calcularMayorsalario(salario));
     mostrarSalario('menor', calcularMenorsalario(salario));
     mostrarSalario('promedio', salarioAnualpromedio(salario));
     mostrarSalario('promediomen', salarioMensualpromedio(salario));
     mostrarResultadossalario();
-    evento.preventDefault();
+   
 }
 
 
@@ -129,24 +132,27 @@ function resetear() {
 
 
 function removerAtributo() {
+    event.preventDefault();
+    
     let m = document.querySelectorAll('.agregar');
     for (let i = 0; i < m.length; i++) {
         let n = m[i];
         n.onclick = function() {
             document.querySelectorAll('.num')[i].removeAttribute('disabled');
-            event.preventDefault();
+            
         };
 
     }
 }
 
 function aplicarAtributo() {
+     event.preventDefault();
     let m = document.querySelectorAll('.quitar');
     for (let i = 0; i < m.length; i++) {
         let n = m[i];
         n.onclick = function() {
             document.querySelectorAll('.num')[i].setAttribute('disabled', 'disabled');
-            event.preventDefault();
+           
         };
     }
 }
