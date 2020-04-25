@@ -41,14 +41,14 @@ function controlFamilia(numero) {
 function crearIntegrantes(numero) {
     for (let i = 1; i <= numero; i++) {
         const $nuevodiv = document.createElement('div');
-        $nuevodiv.className = "integrantes";
+        $nuevodiv.className = "integrante";
 
         const $labelEdad = document.createElement('label');
         $labelEdad.textContent = (` ► Edad n° ... ${i}`);
         const $inputEdad = document.createElement('input');
 
         $inputEdad.type = "number";
-        $inputEdad.className = "anios";
+        $inputEdad.className = "anio";
         $inputEdad.max = "90";
         $inputEdad.min = "01";
 
@@ -79,8 +79,8 @@ function crearIntegrantes(numero) {
         $nuevodiv.appendChild($botonAgregar);
         $nuevodiv.appendChild($botonQuitar);
 
-        const integrantes = document.querySelector('#familia');
-        integrantes.appendChild($nuevodiv);
+        const integrante = document.querySelector('#familia');
+        integrante.appendChild($nuevodiv);
         mostrarBoton();
         removerAtributo();
         aplicarAtributo();
@@ -88,7 +88,7 @@ function crearIntegrantes(numero) {
 }
 
 function borrarIntegrantes() {
-    const borrar = document.querySelectorAll('.integrantes');
+    const borrar = document.querySelectorAll('.integrante');
     for (let i = 0; i < borrar.length; i++) {
         borrar[i].remove();
     }
@@ -101,7 +101,7 @@ function mostrarBoton() {
 
 
 function obtenerEdad() {
-    const edadpart = document.querySelectorAll('.integrantes .anios');
+    const edadpart = document.querySelectorAll('.integrante .anio');
     let array = [];
     for (let i = 0; i < edadpart.length; i++) {
         array.push(Number(edadpart[i].value));
@@ -159,7 +159,7 @@ function aplicarAtributo() {
 
 
 function ObtenerSalario() {
-    const salar = document.querySelectorAll('.integrantes .num');
+    const salar = document.querySelectorAll('.integrante .num');
     let array = [];
     for (let i = 0; i < salar.length; i++) {
         if (!salar[i].disabled) {
